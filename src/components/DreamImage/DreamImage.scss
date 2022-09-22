@@ -1,7 +1,9 @@
 .dream-container {
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .dream-image {
-  width: 100%;
+  max-width: 100%;
 }

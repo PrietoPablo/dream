@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import axios from 'axios';
 
 import './App.scss';
 
@@ -9,16 +8,20 @@ import DreamForm from '../DreamForm/DreamForm';
 function App() {
   const [dream, setDream] = useState('');
   const [submitDream, setSubmitDream] = useState('');
-  console.log(submitDream);
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="App">
-      <DreamForm dream={dream} setDream={setDream} setSubmitDream={setSubmitDream} />
+      <DreamForm
+        dream={dream}
+        setDream={setDream}
+        setSubmitDream={setSubmitDream}
+        setLoading={setLoading}
+      />
       {submitDream
-      && <DreamImage submitDream={submitDream} />}
+      && <DreamImage submitDream={submitDream} loading={loading} />}
     </div>
   );
 }
 
-// == Export
 export default App;
